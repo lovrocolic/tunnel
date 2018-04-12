@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  * Main class
- * By default it works with DrivingModuleTunnelOne implementation
+ * By default it works with DrivingModuleTunnelOne or DrivingModuleTunnelTwo implementations
  * It prints last position in tunnel
  * User has to select tunnel
  */
@@ -24,9 +24,9 @@ public class Main {
             DrivingEngine drivingEngine = new DrivingEngine(tunnels);
             DrivingModule drivingModule;
             if(tunnelNumber == 1){
-                drivingModule = new DrivingModuleTunnelOneObstruction();
+                drivingModule = new DrivingModuleTunnelOne();
             }else{
-                drivingModule = new DrivingModuleTunnelTwoObstruction();
+                drivingModule = new DrivingModuleTunnelTwo();
             }
             Position position = drivingEngine.driveFromStartToEnd(tunnelNumber, drivingModule);
             System.out.println("Your last position is: " + position);

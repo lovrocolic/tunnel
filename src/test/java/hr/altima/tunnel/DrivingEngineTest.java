@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by lovro on 11/04/2018.
+ * Testing DrivingEngine
  */
 public class DrivingEngineTest {
     private Map<Integer, Tunnel> tunnels = new HashMap<>();
@@ -21,33 +21,33 @@ public class DrivingEngineTest {
 
     @Test
     public void testDriveFromStartToEndInTunnelOne(){
-        DrivingModuleTunnelOne driving_module = new DrivingModuleTunnelOne();
+        DrivingModuleTunnelOne drivingModule = new DrivingModuleTunnelOne();
         DrivingEngine engine = new DrivingEngine(tunnels);
-        Position position = engine.driveFromStartToEnd(1, driving_module);
+        Position position = engine.driveFromStartToEnd(1, drivingModule);
         assertEquals(position, Position.END);
     }
 
     @Test
     public void testDriveFromStartToEndInTunnelOneWithObstruction(){
-        DrivingModuleTunnelOneObstruction driving_module = new DrivingModuleTunnelOneObstruction();
+        DrivingModuleTunnelOneObstruction drivingModule = new DrivingModuleTunnelOneObstruction();
         DrivingEngine engine = new DrivingEngine(tunnels);
-        Position position = engine.driveFromStartToEnd(1, driving_module);
+        Position position = engine.driveFromStartToEnd(1, drivingModule);
         assertEquals(position, Position.START);
     }
 
     @Test
     public void testDriveFromStartToEndInTunnelTwo(){
-        DrivingModuleTunnelTwo driving_module = new DrivingModuleTunnelTwo();
+        DrivingModuleTunnelTwo drivingModule = new DrivingModuleTunnelTwo();
         DrivingEngine engine = new DrivingEngine(tunnels);
-        Position position = engine.driveFromStartToEnd(2, driving_module);
+        Position position = engine.driveFromStartToEnd(2, drivingModule);
         assertEquals(position, Position.END);
     }
 
     @Test
     public void testDriveFromStartToEndInTunnelTwoObstruction(){
-        DrivingModuleTunnelTwoObstruction driving_module = new DrivingModuleTunnelTwoObstruction();
+        DrivingModuleTunnelTwoObstruction drivingModule = new DrivingModuleTunnelTwoObstruction();
         DrivingEngine engine = new DrivingEngine(tunnels);
-        Position position = engine.driveFromStartToEnd(2, driving_module);
+        Position position = engine.driveFromStartToEnd(2, drivingModule);
         assertEquals(position, Position.START);
     }
 }

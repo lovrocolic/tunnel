@@ -24,7 +24,7 @@ public class FirstTunnel implements Tunnel{
      */
     public Position navigate(DrivingModule drivingModule){
         while(true) {
-            if(obstruction == true){
+            if(obstruction){
                 navigateBack(drivingModule);
                 return position;
             }
